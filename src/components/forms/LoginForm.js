@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Form, Button} from 'semantic-ui-react';
 import Validator from 'validator';
-import InlineError from '../messages/InlineError'
+import InlineError from '../messages/InlineError';
 
-class page_name extends React.Component{
+class LoginForm extends React.Component{
     state = {
         data: {
             email: '',
@@ -21,6 +22,9 @@ class page_name extends React.Component{
     onSubmit = e => {
         const errors = this.validate(this.state.data);
         this.setState({errors});
+        if( Object.keys(errors).length === 0){
+            this.props.submit(this.state.data);
+        }
     }
 
     validate = (data) => {
@@ -67,4 +71,8 @@ class page_name extends React.Component{
     }
 }
 
-export default page_name;
+LoginForm.propTypes = {
+    submit: PropTypes.func.isRequired
+};
+
+export default LoginForm;
