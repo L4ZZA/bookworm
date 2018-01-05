@@ -11,10 +11,12 @@ class LoginPage extends React.Component{
 
     render(){
         return (
-            <div>
-                <h1>Login Page</h1>
+            <div className="ui middle aligned center aligned grid">
+                <div className="column"> 
+                    <h1>Login Page</h1>
 
-                <LoginForm submit={this.submit} />
+                    <LoginForm submit={this.submit} />
+                </div>
             </div>
         );
     }
