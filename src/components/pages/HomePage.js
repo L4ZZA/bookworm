@@ -17,7 +17,7 @@ const HomePage = ({isAuthenticated, logout}) => (
     </div>
 );
 
-HomePage.PropTypes = {
+HomePage.propTypes = {
 	isAuthenticated: PropTypes.bool.isRequired,
 	logout: PropTypes.func.isRequired
 };
